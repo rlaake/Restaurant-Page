@@ -1,0 +1,70 @@
+/* background styling */
+
+.contact-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-image: url('../images/nrd.jpg');
+  opacity: 0.8;
+}
+
+div#contact-credit { 
+  z-index: 1000;
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+}
+div#contact-credit p { 
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25em;
+  padding: 0;
+}
+
+@media screen and (max-width: 950px) { 
+  div#contact-credit p { font-size: 1em; }
+}
+
+/* main styling */
+
+main#contact {
+  position: relative;
+  color: ghostwhite;
+  font-family: 'Roboto', sans-serif;
+  padding-right: 2.5em;
+  padding-left: 2.5em;
+  padding-top: 2.5em;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 40% 60%;
+}
+
+main#contact h2 {
+  font-size: 3em;
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+main#contact h4 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+@media screen and (max-width: 600px) {
+  main#contact h4 {
+    grid-area: 2 / 1 / 3 / 3;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main#contact h2 {
+    font-size: 2.5em;
+  }
+}
