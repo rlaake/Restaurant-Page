@@ -4,6 +4,8 @@ ul {
   list-style-type: none;
 }
 
+/* slideshow styling was modified from https://tympanus.net/codrops/2012/01/02/fullscreen-background-image-slideshow-with-css3/ */
+
 .cb-slideshow {
   position: fixed;
   width: 100%;

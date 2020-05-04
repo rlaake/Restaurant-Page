@@ -15,6 +15,7 @@ a {
 
 header {
   position: relative;
+  z-index: 6;
 }
 
 .page-header {
@@ -55,14 +56,18 @@ header {
   color: darkgrey;
 }
 
+/* from https://stackoverflow.com/questions/34635588/how-do-i-remove-outline-on-link-click */
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
+}
+
 .icon {
   display: none;
 }
 
 @media screen and (max-width: 700px) {
-  #link-container {
-    justify-content: center;
-  }
   
   #link-container a {
     display: none;
@@ -80,20 +85,25 @@ header {
   #link-container {
     flex-direction: column;
   }
-  
-  #link-container.responsive {
-    position: relative;
-  }
 
   #link-container.responsive a {
-    float: none;
     display: block;
     align-self: center;
-    padding-top: .4em;
   }
 
-  #link-container.responsive a.icon {
-    margin-top: 0.65em;
+  #About {
+    position: absolute;
+    top: 3em;
+  }
+
+  #Menu {
+    position: absolute;
+    top: 5em;
+  }
+
+  #Contact {
+    position: absolute;
+    top: 7em;
   }
 }
 

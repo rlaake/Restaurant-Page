@@ -3,6 +3,7 @@ import { home } from './home.js';
 import { about } from './about.js';
 import { menu } from './menu.js';
 import { contact } from './contact.js';
+import { removeClass } from './resize.js';
 import '../styling/index.css';
 
 //create link element for font-awesome
@@ -12,7 +13,7 @@ iconSheet.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/font-awes
 
 //create header element
 let header = document.createElement('header');
-header.innerHTML = '<header class="page-header"><a href= "#home"><h2 class="logo">Pizza Cat</h2></a><div class="nav" id="link-container"><a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a><a href="#About">About</a><a href="#Menu">Menu</a><a href="#Contact">Contact</a></div></header>';
+header.innerHTML = '<header class="page-header"><a href= "#home"><h2 class="logo">Pizza Cat</h2></a><div class="nav" id="link-container"><a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a><a href="#About" id="About">About</a><a href="#Menu" id="Menu">Menu</a><a href="#Contact" id="Contact">Contact</a></div></header>';
 
 //create footer element
 let footer = document.createElement('footer');
@@ -21,7 +22,7 @@ footer.innerHTML = '<footer class="page-footer"><p>&copy; 2020 Pizza Cat &bull; 
 //get head, body, & content references
 let head = document.getElementsByTagName('head')[0];
 let body = document.getElementsByTagName('body')[0];
-let content = document.getElementById('content')[0];
+let content = document.getElementById('content');
 
 //attached created elements to head & body
 head.appendChild(iconSheet);
@@ -39,6 +40,9 @@ navLinks[4].addEventListener('click', contact);
 //get reference to nav drop down icon & attach function
 let icon = document.getElementsByClassName('icon')[0];
 icon.addEventListener('click', myFunction);
+
+//remove responsive class on nav link on window resize over 700px
+window.onresize = removeClass;
 
 //on initial page load, home content is loaded
 home();
